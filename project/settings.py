@@ -13,6 +13,7 @@ CORS_ALLOWED_ORIGINS = ["http://localhost:5000"]
 
 FIRST_PARTY_APPS = [
     "user.apps.UserConfig",
+    "api.apps.ApiConfig",
 ]
 
 THIRD_PARTY_APPS = [
@@ -114,3 +115,5 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
     ]
 }
+
+FIXTURE_DIRS = BASE_DIR / "fixtures"

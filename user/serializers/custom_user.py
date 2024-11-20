@@ -9,10 +9,9 @@ from user.models import CustomUser
 
 class CustomUserSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
-    username = serializers.CharField()
     password = serializers.CharField(write_only=True)
-    given_name = serializers.CharField()
     profile_image = serializers.ImageField(required=False)
+    is_staff = serializers.BooleanField(read_only=True)
 
     class Meta:
         model = CustomUser
@@ -22,6 +21,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
             "password",
             "given_name",
             "profile_image",
+            "is_staff",
         ]
 
     def validate_password(self, value: str) -> str:
