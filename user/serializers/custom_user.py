@@ -9,7 +9,7 @@ from user.models import CustomUser
 
 class CustomUserSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
-    password = serializers.CharField(write_only=True)
+    password = serializers.CharField(write_only=True, max_length=128)
     profile_image = serializers.ImageField(required=False)
     is_staff = serializers.BooleanField(read_only=True)
 
@@ -30,8 +30,8 @@ class CustomUserSerializer(serializers.ModelSerializer):
 
 class CustomUserUpdateSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
-    username = serializers.CharField(read_only=True)
-    given_name = serializers.CharField()
+    username = serializers.CharField(read_only=True, max_length=255)
+    given_name = serializers.CharField(max_length=255)
     profile_image = serializers.ImageField(required=False)
 
     class Meta:

@@ -38,7 +38,7 @@ class BookCreateSerializer(serializers.ModelSerializer):
 
 
 class BookUpdateSerializer(serializers.ModelSerializer):
-    title = serializers.CharField(required=False)
+    title = serializers.CharField(required=False, max_length=255)
     author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all(), required=False)
     cover = serializers.FileField(required=False)
 
