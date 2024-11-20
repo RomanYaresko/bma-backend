@@ -1,4 +1,0 @@
-[{"model": "api.author", 
-"pk": 8, "fields": {"name": "Guy de Maupassant", "birth_date": "1893-08-05"}}, 
-{"model": "api.author", "pk": 9, "fields": {"name": "Johann Wolfgang von Goethe", "birth_date": "1749-08-28"}}, 
-{"model": "api.author", "pk": 10, "fields": {"name": "Jack London", "birth_date": "1876-01-12"}}]
